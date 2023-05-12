@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Summarizer</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+    <link rel="stylesheet" href="/main.css" />
+  </head>
+  <body>
+    <header>
+      <a href="/">Summarizer</a>
+      <ul><li><a href="#about">About</a></li></ul>
+    </header>
+
+    <section>
+      <header><h1>Summarizer</h1>
+      <p>Enter a URL and have ChatGPT give you the tl;dr</p></header>
+
+      <aside>
+      <span class="htmx-indicator"> <img src="/bars.svg" /> Loading... </span>
+    <form hx-post="/test" hx-target="#result" hx-indicator=".htmx-indicator">
+      <label for="url">URL:</label>
+      <input type="text" name="url" hx-trigger="enter" />
+      <input type="submit" value="Summarize">
+    </form>
+  </aside>
+  </section>
+
+  <main>
+    <article>
+    <h1>Results:</h1>
+    <p id="result"></p>
+  </article>
+  </main>
+
+  <footer>
+    <ul>
+      <li><a href="https://willschenk.com">&copy; 2023 Will Schenk</a></li>
+      <li><a href="https://github.com/wschenk/summarizer">Code</a></li>
+    </ul>
+  </footer>
+
+  </html>
