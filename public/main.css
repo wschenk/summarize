@@ -3121,7 +3121,13 @@ section header h2{
 }
 
 section aside{
-  width: 33.333333%;
+  width: 100%;
+}
+
+@media (min-width: 768px){
+  section aside{
+    width: 33.333333%;
+  }
 }
 
 article{
