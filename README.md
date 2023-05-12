@@ -30,3 +30,5 @@ end
 bundle add nokogiri json ruby-openai rerun
 
 rerun "bundler exec rackup"
+
+fly wireguard reset

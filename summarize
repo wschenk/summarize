@@ -15,6 +15,12 @@ if ENV['OPENAI_TOKEN'].nil?
   exit 1
 end
 
+url = ARGV[0]
+unless url =~  URI::DEFAULT_PARSER.regexp[:ABS_URI]
+  $stderr.puts "#{url} is not a valid URL"
+  exit 1
+end
+
 uri = URI(ARGV[0])
 response = Net::HTTP.get_response(uri)
 

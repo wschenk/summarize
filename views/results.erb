@@ -1,0 +1,24 @@
+<% if @error %>
+    <h2><%= @error %></h2>
+<% elsif @runner %>
+
+    <% if @runner.running? %>
+        <h2>Running...</h2>
+    <% elsif @runner.finished? %>
+        <% if @runner.success? %>
+            <h2>Results</h2>
+
+            <p><%= @runner.stdout %></p>
+
+            <p>Generated in <%= @runner.duration %> seconds from
+             <a class="underlined text-blue-600" href="<%= @url %>"><%= @url %></a></p>
+        <% else %>
+            <h2>Error</h2>
+
+            <p><%= @runner.stderr %></p>
+        <% end %>
+    <% else %>
+        <p hx-get="/summarize" hx-include="[name='url']" hx-trigger="every 1s" hx-target="#results">Loading <%= @url %>... <%= @runner.duration %></p>
+    <% end %>
+
+<% end %>

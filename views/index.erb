@@ -1,0 +1,26 @@
+    <section>
+      <header>
+        <h1>tl;dr</h1>
+        <p>Enter a URL and have ChatGPT give you the tl;dr</p>
+      </header>
+
+      <aside>
+        <span class="htmx-indicator"> <img src="/bars.svg" /> Loading... </span>
+        <form
+          hx-get="/summarize"
+          hx-target="#results"
+          hx-push-url="true"
+          hx-indicator=".htmx-indicator"
+        >
+          <label for="url">URL:</label>
+          <input type="text" name="url" id="url" hx-trigger="enter" value="<%= @url %>"/>
+          <input type="submit" value="Summarize" />
+        </form>
+      </aside>
+    </section>
+
+    <main>
+      <article id="results">
+        <%= erb :results %>
+      </article>
+    </main>

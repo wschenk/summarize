@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Summarizer</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+    <link rel="stylesheet" href="/main.css" />
+  </head>
+  <body hx-boost="true">
+    <header>
+      <a href="/">Summarizer</a>
+      <ul>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </header>
+
+    <%= yield %>
+
+    <footer>
+      <ul>
+        <li><a href="https://willschenk.com">&copy; 2023 Will Schenk</a></li>
+        <li><a href="https://github.com/wschenk/summarize">Code</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>
