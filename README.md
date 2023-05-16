@@ -32,3 +32,5 @@ bundle add nokogiri json ruby-openai rerun
 rerun "bundler exec rackup"
 
 fly wireguard reset
+
+add cname to hosting provider
