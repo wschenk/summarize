@@ -11,6 +11,24 @@ class App < Sinatra::Base
     erb :about
   end
 
+  get '/block' do
+    erb :block
+  end
+
+  post '/block' do
+      if params[:text].nil? || params[:text] == ""
+        return "Please enter some text"
+      end
+
+      stdout_str, stderr_str, status = Open3.capture3("./summarize_text", stdin_data: params[:text])
+
+      if status.success?
+        return stdout_str
+      else
+        return "Command failed with status #{status.exitstatus}:\n#{stderr_str}"
+      end
+  end
+
   get '/summarize' do
     @url = params[:url]
 

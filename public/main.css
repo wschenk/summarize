@@ -3258,7 +3258,7 @@ textarea{
   width: 100%;
 }
 
-form button,
+button,
 form input[type="submit"]{
   border-width: 0px;
   --tw-bg-opacity: 1;
@@ -3268,6 +3268,12 @@ form input[type="submit"]{
   font-family: 'Averia Serif Libre', ui-serif;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+button{
+  border-radius: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .hover\:prose-lg:hover{
