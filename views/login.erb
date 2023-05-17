@@ -1,0 +1,15 @@
+<section>
+    <header>
+        <h1>Please enter password for access</h1>
+
+        <p><%= @error %></p>
+    </header>
+
+    <aside>
+    <form method="post" action="/login">
+        <label for="password">Password:</label>
+        <input type="password" name="password">
+        <input type="submit" value="Login" />
+    </form>
+    </aside>
+</section>

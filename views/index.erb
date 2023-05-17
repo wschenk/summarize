@@ -7,16 +7,15 @@
       <aside>
         <span class="htmx-indicator"> <img src="/bars.svg" /> Loading... </span>
         <form
-          hx-get="/summarize"
+          hx-get="/"
           hx-target="#results"
-          hx-push-url="true"
           hx-indicator=".htmx-indicator"
+          hx-push-url="true"
         >
-          <label for="url">URL:</label>
-          <input type="text" name="url" id="url" hx-trigger="enter" value="<%= @url %>"/>
-          <input type="submit" value="Summarize" />
+          <label for="q">URL:</label>
+          <input type="text" name="q" id="q""/>
+          <input type="submit" value="Run" />
         </form>
-        <button><a href="/block">Or a big block of text</a></button>
       </aside>
     </section>
 

@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body > header {
+  @apply mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8;
+}
+
+body > header > a {
+  @apply font-heading text-2xl font-bold;
+}
+
+body > header ul {
+  @apply justify-end flex gap-x-4;
+}
+
+body > header ul a {
+  @apply text-lg font-heading;
+}
+
+main {
+  @apply mx-auto max-w-7xl p-6 lg:px-8;
+}
+
+section {
+  @apply mx-auto max-w-7xl p-6 lg:px-8 flex flex-wrap justify-center;
+}
+
+section header {
+  @apply text-center w-full py-8;
+}
+
+section header h1 {
+  @apply text-3xl font-heading;
+}
+
+section header h2 {
+  @apply text-3xl font-heading;
+}
+
+section aside {
+  @apply w-full md:w-1/3;
+}
+
+article {
+  @apply max-w-prose;
+}
+
+article aside {
+  @apply md:-mr-72 md:w-64 md:float-right inline md:block italic text-slate-700;
+}
+
+article p:first-of-type {
+  @apply text-lg;
+}
+
+article h1 {
+  @apply text-4xl py-4 font-heading;
+}
+
+article h2 {
+  @apply text-3xl py-3 font-heading;
+}
+
+article h3 {
+  @apply text-2xl py-2 font-heading;
+}
+
+article a {
+  @apply text-blue-600 underline;
+}
+
+article p {
+  @apply pb-2;
+}
+
+article ul {
+  @apply list-disc list-outside text-lg;
+}
+
+article ol {
+  @apply list-decimal list-outside text-lg;
+}
+
+article ol li,
+article ul li {
+  @apply pb-2;
+}
+
+footer {
+  @apply mx-auto flex max-w-7xl items-center justify-between p-6 mt-4 lg:px-8 font-heading;
+}
+
+footer ul {
+  @apply items-center justify-between flex gap-x-4 w-full;
+}
+
+table {
+  @apply w-full my-4;
+}
+
+table caption {
+  @apply font-heading my-4 text-left font-bold text-lg border-b border-b-slate-700;
+}
+
+table th {
+  @apply text-left font-heading;
+}
+
+form label {
+  @apply block font-heading pt-2;
+}
+
+form input,
+form textarea {
+  @apply block border border-slate-700 rounded p-2 my-2;
+}
+form input[type="text"],
+textarea {
+  @apply w-full;
+}
+
+button,
+form input[type="submit"] {
+  @apply bg-blue-600 text-white font-heading py-1 border-0;
+}
+
+button {
+  @apply px-2 rounded;
+}

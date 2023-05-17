@@ -18,7 +18,7 @@
             <p><%= @runner.stderr %></p>
         <% end %>
     <% else %>
-        <p hx-get="/summarize" hx-include="[name='url']" hx-trigger="every 1s" hx-target="#results">Loading <%= @url %>... <%= @runner.duration %></p>
+        <p hx-get="<%= request.path_info %>" hx-include="[name='q']" hx-trigger="every 1s" hx-target="#results">Loading <%= @url %>... <%= @runner.duration %></p>
     <% end %>
 
 <% end %>

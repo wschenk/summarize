@@ -1,0 +1,14 @@
+if [ -z ${OPENAI_TOKEN} ]; then
+  echo Getting OPENAI_TOKEN from lastpass
+
+  if ! lpass status; then
+    echo Login with lpass login
+    exit 1
+  fi
+
+  export OPENAI_TOKEN=$(lpass show "OpenAI Key" | awk '/Notes/ {print $2}')
+fi
+
+#(cd /tmp && redis-server)&
+npm run dev &
+rerun --ignore 'views/*,index.css' "bundler exec rackup"

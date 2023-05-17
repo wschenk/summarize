@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "dev": "npx tailwindcss -i input.css -o public/main.css -w",
+    "build": "NODE_ENV=production npx tailwindcss -i input.css -o public/main.css -m"
+  },
+  "devDependencies": {
+    "@prettier/plugin-ruby": "^3.2.2",
+    "@tailwindcss/typography": "^0.5.9",
+    "tailwindcss": "^3.3.1"
+  }
+}
