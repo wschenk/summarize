@@ -3,8 +3,10 @@ require 'kramdown'
 require_relative './runner'
 
 class App < Sinatra::Base
-  enable :sessions
-
+  use Rack::Session::Cookie, :key => 'rack.session',
+    :path => '/',
+    :secret => 'sosecret'
+    
   get '/' do
     auth_check do
       if params[:q]
@@ -39,7 +41,7 @@ class App < Sinatra::Base
       erb :login
     else
       path = session.delete :redirect_to
-      redirect path
+      redirect( path || '/' )
     end
   end
 
