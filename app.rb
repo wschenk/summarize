@@ -10,7 +10,7 @@ class App < Sinatra::Base
   get '/' do
     auth_check do
       if params[:q]
-        @runner = Runner.filesystem( ["./summarize", params[:q]] )
+        @runner = Runner.filesystem( ["./summarize", params[:q]], {url: params[:q]} )
       end
 
       if request.env['HTTP_HX_TARGET'] == 'results'

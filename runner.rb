@@ -30,6 +30,7 @@ class Runner
     run_if_not_started
   end
 
+  def keys; @state[:keys]; end
   def started_at; @state[:started_at]; end
   def finished_at; @state[:finished_at]; end
   def started?; @state[:started_at]; end

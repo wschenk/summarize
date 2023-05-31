@@ -11,7 +11,7 @@
             <p><%= @runner.stdout %></p>
 
             <p>Generated in <%= @runner.duration %> seconds from
-             <a class="underlined text-blue-600" href="<%= @url %>"><%= @url %></a></p>
+             <a class="underlined text-blue-600" href="<%= @runner.keys[:url] %>"><%= @runner.keys[:url] %></a></p>
         <% else %>
             <h2>Error</h2>
 
