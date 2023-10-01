@@ -1,0 +1,3 @@
+#!/bin/bash
+
+./node_modules/.bin/percollate md --output=- $1
