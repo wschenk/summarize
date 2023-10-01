@@ -4,9 +4,9 @@ require_relative './runner'
 
 class App < Sinatra::Base
   use Rack::Session::Cookie, :key => 'rack.session',
-    :path => '/',
-    :secret => 'sosecret'
-    
+      :path => '/',
+      :secret => 'sosecret'
+  
   get '/' do
     auth_check do
       if params[:q]

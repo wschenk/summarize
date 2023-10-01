@@ -1,5 +1,4 @@
-ARG RUBY_VERSION=3.0.3
-FROM ruby:$RUBY_VERSION-slim as base
+FROM timbru31/ruby-node:3.3-slim-18 as base
 
 # Rack app lives here
 WORKDIR /app
@@ -26,6 +25,8 @@ FROM base
 
 # Run and own the application files as a non-root user for security
 RUN useradd ruby --home /app --shell /bin/bash
+COPY package*json ./
+RUN npm install
 USER ruby:ruby
 
 # Copy built artifacts: gems, application

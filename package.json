@@ -7,5 +7,8 @@
     "@prettier/plugin-ruby": "^3.2.2",
     "@tailwindcss/typography": "^0.5.9",
     "tailwindcss": "^3.3.1"
+  },
+  "dependencies": {
+    "percollate": "^4.0.3"
   }
 }
