@@ -1,4 +1,6 @@
 {
+  "type":"module",
+
   "scripts": {
     "dev": "npx tailwindcss -i input.css -o public/main.css -w",
     "build": "NODE_ENV=production npx tailwindcss -i input.css -o public/main.css -m"
@@ -9,6 +11,8 @@
     "tailwindcss": "^3.3.1"
   },
   "dependencies": {
-    "percollate": "^4.0.3"
+    "@mozilla/readability": "^0.5.0",
+    "jsdom": "^24.0.0",
+    "node-fetch": "^3.3.2"
   }
 }

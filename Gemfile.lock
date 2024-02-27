@@ -2,12 +2,13 @@ GEM
   remote: https://rubygems.org/
   specs:
     connection_pool (2.4.1)
-    faraday (2.7.8)
-      faraday-net_http (>= 2.0, < 3.1)
-      ruby2_keywords (>= 0.0.4)
+    event_stream_parser (1.0.0)
+    faraday (2.9.0)
+      faraday-net_http (>= 2.0, < 3.2)
     faraday-multipart (1.0.4)
       multipart-post (~> 2)
-    faraday-net_http (3.0.2)
+    faraday-net_http (3.1.0)
+      net-http
     ffi (1.15.5)
     httparty (0.21.0)
       mini_mime (>= 1.0.0)
@@ -21,9 +22,11 @@ GEM
     mini_mime (1.1.2)
     mini_portile2 (2.8.2)
     multi_xml (0.6.0)
-    multipart-post (2.3.0)
+    multipart-post (2.4.0)
     mustermann (3.0.0)
       ruby2_keywords (~> 0.0.1)
+    net-http (0.4.1)
+      uri
     nio4r (2.5.9)
     nokogiri (1.15.2)
       mini_portile2 (~> 2.8.2)
@@ -44,7 +47,8 @@ GEM
     rerun (0.14.0)
       listen (~> 3.0)
     rexml (3.2.5)
-    ruby-openai (4.2.0)
+    ruby-openai (6.3.1)
+      event_stream_parser (>= 0.3.0, < 2.0.0)
       faraday (>= 1)
       faraday-multipart (>= 1)
     ruby2_keywords (0.0.5)
@@ -54,6 +58,7 @@ GEM
       rack-protection (= 3.0.6)
       tilt (~> 2.0)
     tilt (2.2.0)
+    uri (0.13.0)
 
 PLATFORMS
   ruby
@@ -66,7 +71,7 @@ DEPENDENCIES
   puma (~> 6.2)
   redis (~> 5.0)
   rerun (~> 0.14.0)
-  ruby-openai (~> 4.0)
+  ruby-openai (~> 6.3)
   sinatra (~> 3.0)
 
 BUNDLED WITH
